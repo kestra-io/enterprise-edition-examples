@@ -14,7 +14,9 @@ inputs:
     type: BOOLEAN
     defaults: true
     displayName: I agree to receive other communications from Kestra.
-    description: By clicking Submit, you agree to Kestra storing and processing the personal information provided above to deliver the requested content.
+    description: |
+      By clicking Submit, you agree to Kestra storing and processing 
+      the personal information provided above to deliver the requested content.
 
 tasks:
   - id: save_in_db

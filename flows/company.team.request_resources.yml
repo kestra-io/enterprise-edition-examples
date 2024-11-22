@@ -24,14 +24,14 @@ inputs:
       condition: "{{ inputs.resource_type equals 'Access permissions' }}"
 
   - id: saas_applications
-    displayName: SaaS Application
+    displayName: SaaS Applications
     type: MULTISELECT
     values: ["Slack", "Notion", "HubSpot", "GitHub", "Jira"]
     allowCustomValue: true
     dependsOn:
       inputs:
         - resource_type
-      condition: "{{ inputs.resource_type equals 'SaaS application' }}"
+      condition: "{{ inputs.resource_type equals 'SaaS applications' }}"
 
   - id: development_tools
     displayName: Development Tool
@@ -72,22 +72,22 @@ tasks:
     payload: |
       {
         "channel": "#devops",
-        "text": {{ render(vars.slack_message) | json }}
+        "text": {{ render(vars.slack_message) | toJson }}
       }
 
   - id: wait_for_approval
     type: io.kestra.plugin.core.flow.Pause
     onResume:
-      - id: approved
-        description: Whether to approve the request
+      - id: provisioning_status
+        description: Whether the resources were able to be provisioned
         type: BOOLEAN
         defaults: true
-        displayName: Approval Status
+        displayName: Provisioning Status
 
       - id: comment
         description: Extra comments about the provisioned resources
         type: STRING
-        defaults: All requested resources are approved
+        defaults: All requested resources have been provisioned
         displayName: Approval Comment
 
   - id: approve

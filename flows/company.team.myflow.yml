@@ -1,10 +1,12 @@
 id: myflow
 namespace: company.team
+
 inputs:
   - id: user
     type: STRING
     defaults: World
+
 tasks:
   - id: hello
     type: io.kestra.plugin.core.log.Log
-    message: Hello {{ inputs.user}} 🚀
+    message: Hello {{ inputs.user }}

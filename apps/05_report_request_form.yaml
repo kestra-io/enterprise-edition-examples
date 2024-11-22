@@ -1,4 +1,4 @@
-id: request_data_form
+id: report_request_form
 type: io.kestra.plugin.ee.apps.Execution
 displayName: Form to request and download data
 namespace: company.team
@@ -15,6 +15,7 @@ layout:
         content: |
           ## Request data
           Select the dataset you want to download.
+
       - type: io.kestra.plugin.ee.apps.execution.blocks.CreateExecutionForm
       - type: io.kestra.plugin.ee.apps.execution.blocks.CreateExecutionButton
         text: Submit
@@ -59,32 +60,3 @@ layout:
         text: Submit new request
         url: https://preview-ee-kafka.kestra.io/ui/release/apps/3vT2LpMsQmHiLYyADF1kE9
         style: DEFAULT
-
-description: |
-  This app is intended to request data and download it. Example flow:
-    ```yaml
-    id: get_data
-    namespace: company.team
-
-    inputs:
-      - id: data
-        displayName: Select Data to Download
-        type: SELECT
-        values: [customers, employees, products, stores, suppliers]
-        defaults: customers
-
-      - id: startDate
-        displayName: Start Date for your dataset
-        type: DATE
-        defaults: 2024-12-03
-
-    tasks:
-      - id: extract
-        type: io.kestra.plugin.core.http.Download
-        uri: https://huggingface.co/datasets/kestra/datasets/resolve/main/ion/{{ inputs.data }}.ion
-
-    outputs:
-      - id: data
-        type: FILE
-        value: "{{ outputs.extract.uri }}"
-    ```

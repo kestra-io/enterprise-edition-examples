@@ -3,13 +3,13 @@ namespace: company.team
 
 inputs:
   - id: data
-    displayName: Select Data to Download
+    displayName: Select data to download
     type: SELECT
     values: [customers, employees, products, stores, suppliers]
     defaults: customers
 
   - id: startDate
-    displayName: Start Date for your dataset
+    displayName: Start date for your dataset
     type: DATE
     defaults: 2024-12-03
 
@@ -19,6 +19,6 @@ tasks:
     uri: https://huggingface.co/datasets/kestra/datasets/resolve/main/ion/{{ inputs.data }}.ion
 
 outputs:
-  - id: data
+  - id: Data
     type: FILE
     value: "{{ outputs.extract.uri }}"

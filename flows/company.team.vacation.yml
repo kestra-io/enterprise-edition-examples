@@ -4,12 +4,15 @@ namespace: company.team
 inputs:
   - id: request.name
     type: STRING
+    displayName: Employee name
 
   - id: request.start_date
     type: DATE
+    displayName: Start date
 
   - id: request.end_date
     type: DATE
+    displayName: End date
 
 tasks:
   - id: send_approval_request
@@ -23,6 +26,12 @@ tasks:
 
   - id: wait_for_approval
     type: io.kestra.plugin.core.flow.Pause
+    onResume:
+      - id: comment
+        description: Extra comments about the provisioned resources
+        type: STRING
+        defaults: Vacation request approved. Enjoy your time off!
+        displayName: Approval Comment
 
   - id: process_request
     type: io.kestra.plugin.core.http.Request

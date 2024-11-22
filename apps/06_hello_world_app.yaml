@@ -1,6 +1,7 @@
-id: helloWorlApp
+id: hello_world_app
 type: io.kestra.plugin.ee.apps.Execution
 displayName: Create Execution for myflow
+description: This app allows you to execute a simple flow and display execution logs.
 namespace: company.team
 flowId: myflow
 access: PUBLIC
@@ -50,19 +51,3 @@ layout:
         text: More examples
         url: https://github.com/kestra-io/examples/tree/main/apps
         style: INFO
-
-description: |
-  This app allows you to execute a simple flow and display execution's logs.
-  Example flow: 
-   ```yaml 
-  id: myflow
-  namespace: company.team
-  inputs:
-    - id: user
-      type: STRING
-      defaults: World
-  tasks:
-    - id: hello
-      type: io.kestra.plugin.core.log.Log
-      message: Hello {{ inputs.user}} 🚀
-   ``` 

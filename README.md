@@ -51,6 +51,11 @@ This repository provides code needed to PoC Kestra Enterprise Edition, including
 
 ## Contributing
 
+We welcome contributions to this repository. 
+
+<details>
+<summary>Expand for instructions on how to contribute to this repository.</summary>
+
 1. Fork the repository.
 2. Create a feature branch:
    ```bash
@@ -66,3 +71,4 @@ This repository provides code needed to PoC Kestra Enterprise Edition, including
    ```
 5. Open a Pull Request.
 
+</details>

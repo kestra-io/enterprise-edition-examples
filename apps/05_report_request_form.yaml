@@ -53,10 +53,10 @@ layout:
 
       - type: io.kestra.ee.apps.blocks.Button
         text: App examples
-        url: https://github.com/kestra-io/examples/tree/main/apps
+        url: https://github.com/kestra-io/enterprise-edition-examples
         style: INFO
 
       - type: io.kestra.ee.apps.blocks.Button
         text: Submit new request
-        url: https://preview-ee-kafka.kestra.io/ui/release/apps/3vT2LpMsQmHiLYyADF1kE9
+        url: "{{ app.url }}"
         style: DEFAULT

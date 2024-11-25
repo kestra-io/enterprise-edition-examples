@@ -96,12 +96,12 @@ layout:
 
       - type: io.kestra.ee.apps.blocks.Button
         text: App examples
-        url: https://github.com/kestra-io/examples/tree/main/apps
+        url: https://github.com/kestra-io/enterprise-edition-examples
         style: INFO
 
       - type: io.kestra.ee.apps.blocks.Button
         text: Submit new request
-        url: https://preview-ee-kafka.kestra.io/ui/release/apps/5gth4KG3aLIa6LaonWh1Wp
+        url: "{{ app.url }}"
         style: DEFAULT
 
   - on: FAILURE
@@ -122,7 +122,7 @@ layout:
 
       - type: io.kestra.ee.apps.blocks.Button
         text: Submit new request
-        url: https://preview-ee-kafka.kestra.io/ui/release/apps/5gth4KG3aLIa6LaonWh1Wp
+        url: "{{ app.url }}"
         style: DEFAULT
 
       - type: io.kestra.ee.apps.blocks.Button

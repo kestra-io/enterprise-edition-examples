@@ -49,5 +49,5 @@ layout:
 
       - type: io.kestra.ee.apps.blocks.Button
         text: More examples
-        url: https://github.com/kestra-io/examples/tree/main/apps
+        url: https://github.com/kestra-io/enterprise-edition-examples
         style: INFO

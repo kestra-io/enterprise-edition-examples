@@ -20,12 +20,21 @@ This repository provides code needed to PoC Kestra Enterprise Edition, including
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/kestra-io/eeexamples-main.git
    cd eeexamples-main
    ```
 
 2. **Set Up Docker Compose**:
    - Review and customize `docker-compose-example.yml` to match your environment.
+   - Rename the `docker-compose-example.yml` to `docker-compose.yml` and add your license key.
+   - Login to the Kestra registry using your license ID and fingerprint:
+     ```bash
+     docker login registry.kestra.io --username=licenseId --password=fingerprint
+     ```
+    - Pull the latest Kestra Enterprise Edition image:
+      ```bash
+        docker pull registry.kestra.io/docker/kestra-ee:latest
+        ```
    - Start the services:
      ```bash
      docker compose up -d
@@ -35,6 +44,10 @@ This repository provides code needed to PoC Kestra Enterprise Edition, including
    - Add or modify flow definitions in the `flows/` directory.
    - Add or modify Apps configuration in the `apps/` directory.
    - Add or modify Dashboards configuration in the `dashboards/` directory.
+
+4. **Access the Kestra UI**:
+   - Open your browser and navigate to `http://localhost:8080`.
+   - Add the flows, apps, and dashboards to your Kestra instance (or deploy via [CI/CD pipeline](https://kestra.io/docs/version-control-cicd/cicd)).
 
 ## Contributing
 

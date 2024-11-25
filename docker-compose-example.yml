@@ -26,7 +26,7 @@ services:
       timeout: 10s
       retries: 10
   ee:
-    image: ghcr.io/kestra-io/kestra-ee:develop
+    image: ghcr.io/kestra-io/kestra-ee:latest
     pull_policy: always
     user: "root"
     command: server standalone --worker-thread=128
@@ -86,5 +86,5 @@ services:
     networks:
       - local
 # docker login registry.kestra.io --username=licenseId --password=fingerprint
-# docker pull registry.kestra.io/docker/kestra-ee:develop
+# docker pull registry.kestra.io/docker/kestra-ee:latest
 # docker compose up -d

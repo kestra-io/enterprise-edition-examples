@@ -1,6 +1,6 @@
 ## Kestra Enterprise Edition Examples
 
-This repository provides code needed to PoC Kestra Enterprise Edition, including applications, dashboards, and flows. Use this repository as a starting point for setting up your environment and customizing it to your needs.
+This repository provides code needed to PoC Kestra Enterprise Edition, including apps, dashboards, and flows. Use this repository as a starting point.
 
 ![apps](img/apps.png)
 
@@ -20,8 +20,8 @@ This repository provides code needed to PoC Kestra Enterprise Edition, including
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/kestra-io/eeexamples.git
-   cd eeexamples
+   git clone https://github.com/kestra-io/enterprise-edition-examples.git
+   cd enterprise-edition-examples
    ```
 
 2. **Set Up Docker Compose**:

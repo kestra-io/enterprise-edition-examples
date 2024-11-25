@@ -2,6 +2,8 @@
 
 This repository provides code needed to PoC Kestra Enterprise Edition, including applications, dashboards, and flows. Use this repository as a starting point for setting up your environment and customizing it to your needs.
 
+![apps](img/apps.png)
+
 ## Repository Structure
 - **`apps/`**: contains verified Apps configuration as code
 - **`dashboards/`**: provides examples of custom dashboards as code which you can use to build custom charts querying your executions, metrics and logs

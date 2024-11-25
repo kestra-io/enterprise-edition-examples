@@ -20,8 +20,8 @@ This repository provides code needed to PoC Kestra Enterprise Edition, including
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/kestra-io/eeexamples-main.git
-   cd eeexamples-main
+   git clone https://github.com/kestra-io/eeexamples.git
+   cd eeexamples
    ```
 
 2. **Set Up Docker Compose**:

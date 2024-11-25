@@ -128,8 +128,8 @@ charts:
             - dev_graph
             - prod_graph
       orderBy:
-        date: ASC
-        duration: DESC
+        - date: ASC
+        - duration: DESC
 
   - id: table_metrics
     type: io.kestra.plugin.core.dashboard.chart.Table
@@ -153,4 +153,4 @@ charts:
             - dev_graph
             - prod_graph
       orderBy:
-        value: DESC
+        - value: DESC

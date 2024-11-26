@@ -11,7 +11,7 @@ tags:
 layout:
   - on: OPEN
     blocks:
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## Submit a vacation approval request
           Submit your vacation request for approval, including your name, start and end dates.
@@ -23,11 +23,11 @@ layout:
 
   - on: RUNNING
     blocks:
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## Execution in progress
 
-      - type: io.kestra.ee.apps.blocks.Loading
+      - type: io.kestra.plugin.ee.apps.core.blocks.Loading
       - type: io.kestra.plugin.ee.apps.execution.blocks.Logs
       - type: io.kestra.plugin.ee.apps.execution.blocks.CancelExecutionButton
         text: Cancel request
@@ -35,7 +35,7 @@ layout:
 
   - on: PAUSE
     blocks:
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## Validate the request
           Below are the details of the request. 
@@ -43,7 +43,7 @@ layout:
       - type: io.kestra.plugin.ee.apps.execution.blocks.Inputs
       - type: io.kestra.plugin.ee.apps.execution.blocks.Outputs
 
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## Approve or Reject?
           Please approve or reject the request.
@@ -57,36 +57,36 @@ layout:
         text: Reject
         style: DANGER
 
-      - type: io.kestra.ee.apps.blocks.AutoRefresh
+      - type: io.kestra.plugin.ee.apps.core.blocks.AutoRefresh
 
   - on: RESUME
     blocks:
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## Thank you for validating the request!
 
-      - type: io.kestra.ee.apps.blocks.AutoRefresh
+      - type: io.kestra.plugin.ee.apps.core.blocks.AutoRefresh
 
   - on: SUCCESS
     blocks:
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## Request processed successfully
           See the logs below.
 
       - type: io.kestra.plugin.ee.apps.execution.blocks.Logs
 
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## You're all set!
           See more App examples in our GitHub repository
 
-      - type: io.kestra.ee.apps.blocks.Button
+      - type: io.kestra.plugin.ee.apps.core.blocks.Button
         text: App examples
         url: https://github.com/kestra-io/enterprise-edition-examples
         style: INFO
 
   - on: FALLBACK
     blocks:
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: You're all set. Thanks for using this app!

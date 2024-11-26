@@ -9,7 +9,7 @@ access: PUBLIC
 layout:
   - on: SUCCESS
     blocks:
-      - type: io.kestra.ee.apps.blocks.Markdown
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |
           ## Download the report
           The data you requested is ready for download.

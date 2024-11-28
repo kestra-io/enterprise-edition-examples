@@ -11,7 +11,7 @@ inputs:
     displayName: Resource Type
     type: SELECT
     required: true
-    values: ["Access permissions", "SaaS application", "Development tool", "Cloud VM"]
+    values: ["Access permissions", "SaaS applications", "Development tool", "Cloud VM"]
 
   - id: access_permissions
     displayName: Access Permissions

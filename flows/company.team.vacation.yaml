@@ -15,6 +15,10 @@ inputs:
     displayName: End date
 
 tasks:
+  - id: fetch_employee_data
+    type: io.kestra.plugin.core.http.Download
+    uri: https://huggingface.co/datasets/kestra/datasets/resolve/main/employees/employees00.csv
+    
   - id: send_approval_request
     type: io.kestra.plugin.notifications.slack.SlackIncomingWebhook
     url: https://reqres.in/api/slack

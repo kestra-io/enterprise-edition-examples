@@ -41,7 +41,12 @@ layout:
           Below are the details of the request. 
 
       - type: io.kestra.plugin.ee.apps.execution.blocks.Inputs
-      - type: io.kestra.plugin.ee.apps.execution.blocks.Outputs
+      - type: io.kestra.plugin.ee.apps.execution.blocks.TaskOutputs
+        outputs:
+          - id: fetch_data
+            displayName: Employee Data
+            type: FILE
+            value: "{{ outputs.fetch_employee_data.uri }}"
 
       - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
         content: |

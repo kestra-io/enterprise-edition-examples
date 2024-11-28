@@ -67,8 +67,6 @@ layout:
         text: Reject
         style: DANGER
       
-      - type: io.kestra.plugin.ee.apps.core.blocks.AutoRefresh
-
   - on: RESUME
     blocks:
       - type: io.kestra.plugin.ee.apps.core.blocks.Markdown

@@ -3,8 +3,7 @@ namespace: company.team
 
 variables:
   slack_message: >
-    New form submission! Click on the Resume button here to approve or reject the request
-#      {{ appLink('myApp') }}
+    New form submission! Click on the Resume button here to approve or reject the request {{ appLink() }}
 
 inputs:
   - id: resource_type

@@ -1,9 +1,10 @@
-id: report_request_form
+id: request_data_form
 type: io.kestra.plugin.ee.apps.Execution
 displayName: Form to request and download data
+description: This app will request data and provide it for download. 
 namespace: company.team
 flowId: get_data
-access: PRIVATE
+access: PUBLIC
 tags:
   - Reporting
   - Analytics
@@ -15,7 +16,6 @@ layout:
         content: |
           ## Request data
           Select the dataset you want to download.
-
       - type: io.kestra.plugin.ee.apps.execution.blocks.CreateExecutionForm
       - type: io.kestra.plugin.ee.apps.execution.blocks.CreateExecutionButton
         text: Submit
@@ -53,10 +53,14 @@ layout:
 
       - type: io.kestra.plugin.ee.apps.core.blocks.Button
         text: App examples
-        url: https://github.com/kestra-io/enterprise-edition-examples
+        url: https://github.com/kestra-io/examples/tree/main/apps
         style: INFO
 
       - type: io.kestra.plugin.ee.apps.core.blocks.Button
         text: Submit new request
         url: "{{ app.url }}"
         style: DEFAULT
+      
+      - type: io.kestra.plugin.ee.apps.core.blocks.RedirectTo
+        delay: PT60S
+        url: https://kestra.io/docs/

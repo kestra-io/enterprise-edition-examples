@@ -1,0 +1,55 @@
+id: ai_assistant
+type: io.kestra.plugin.ee.apps.Execution
+displayName: Get answer recommendation for user research using AI models
+namespace: company.team
+flowId: ai_assistant
+access: PRIVATE
+tags:
+  - User Research
+  - AI
+
+layout:
+  - on: OPEN
+    blocks:
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
+        content: |
+          ## User Context
+          This AI powered application helps you to answer user questions. It's a great help for your user research work!
+          
+          Please fill the user context below.
+      - type: io.kestra.plugin.ee.apps.execution.blocks.CreateExecutionForm
+      - type: io.kestra.plugin.ee.apps.execution.blocks.CreateExecutionButton
+        text: Submit
+
+  - on: RUNNING
+    blocks:
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
+        content: |
+          ## Doing science 🧙
+          Don't close this window. The results will be displayed as soon as the LLM is doing its magic!
+      
+      - type: io.kestra.plugin.ee.apps.core.blocks.Loading
+      - type: io.kestra.plugin.ee.apps.execution.blocks.CancelExecutionButton
+        text: Cancel request
+
+  - on: SUCCESS
+    blocks:
+      - type: io.kestra.plugin.ee.apps.core.blocks.Markdown
+        content: |
+          Here are a potential answer:
+      
+      - type: io.kestra.plugin.ee.apps.execution.blocks.Logs
+        filter:
+          logLevel: INFO
+          taskIds: ['log_response', 'log_response2', 'log_response3']
+     
+
+      - type: io.kestra.plugin.ee.apps.core.blocks.Button
+        text: App examples
+        url: https://github.com/kestra-io/enterprise-edition-examples/tree/main/apps
+        style: INFO
+
+      - type: io.kestra.plugin.ee.apps.core.blocks.Button
+        text: Submit new request
+        url: "{{ app.url }}"
+        style: DEFAULT

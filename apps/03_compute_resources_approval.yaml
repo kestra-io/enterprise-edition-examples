@@ -3,7 +3,8 @@ type: io.kestra.plugin.ee.apps.Execution
 displayName: Resource request form
 namespace: company.team
 flowId: request_resources
-access: PRIVATE
+access: 
+  type: PRIVATE
 tags:
   - Platform Team
   - Infrastructure

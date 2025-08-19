@@ -79,7 +79,7 @@ tasks:
     onResume:
       - id: provisioning_status
         description: Whether the resources were able to be provisioned
-        type: BOOLEAN
+        type: BOOL
         defaults: true
         displayName: Provisioning Status
 

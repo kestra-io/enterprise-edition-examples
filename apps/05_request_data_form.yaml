@@ -4,7 +4,8 @@ displayName: Form to request and download data
 description: This app will request data and provide it for download. 
 namespace: company.team
 flowId: get_data
-access: PUBLIC
+access: 
+  type: PUBLIC
 tags:
   - Reporting
   - Analytics

@@ -3,7 +3,8 @@ type: io.kestra.plugin.ee.apps.Execution
 displayName: Get answer recommendation for user research using AI models
 namespace: company.team
 flowId: ai_assistant
-access: PRIVATE
+access: 
+  type: PRIVATE
 tags:
   - User Research
   - AI

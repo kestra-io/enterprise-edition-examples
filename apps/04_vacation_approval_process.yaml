@@ -3,7 +3,8 @@ type: io.kestra.plugin.ee.apps.Execution
 displayName: Vacation approval request
 namespace: company.team
 flowId: vacation
-access: PRIVATE
+access: 
+  type: PRIVATE
 tags:
   - HR
   - Vacation Approval

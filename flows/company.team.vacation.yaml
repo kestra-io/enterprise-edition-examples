@@ -20,7 +20,7 @@ tasks:
     uri: https://huggingface.co/datasets/kestra/datasets/resolve/main/employees/employees00.csv
     
   - id: send_approval_request
-    type: io.kestra.plugin.notifications.slack.SlackIncomingWebhook
+    type: type: io.kestra.plugin.slack.notifications.SlackIncomingWebhook
     url: https://reqres.in/api/slack
     payload: >
       {
